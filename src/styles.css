@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+/* Font Link Import */
+* {
+  padding: 0;
+  -webkit-user-select: none;
+  user-select: none;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+/* CSS RESET ENDS HERE */
+:root {
+  --text-color: #fff;
+  --almost-white-color: #cac8c8;
+  --dark-color: #192a3e;
+  --darker-color: #0f1824;
+}
+.App {
+  scroll-behavior: smooth;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  animation: backgroundAnimate 3s linear infinite alternate;
+}
+@keyframes backgroundAnimate {
+  from {
+    background-size: 100%;
+  }
+  to {
+    background-size: 250%;
+  }
+}
+.theme-container,
+.clock-container {
+  height: 100%;
+}
+.theme-container {
+  background-color: var(--text-color);
+  position: absolute;
+  height: 400px;
+  width: 50px;
+  bottom: 25%;
+  left: 10px;
+  border-radius: 40px;
+  z-index: 99;
+}
+.theme-container label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.themeSelector {
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+  border: var(--almost-white-color) solid 3px;
+  cursor: pointer;
+}
+.clock-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.logo {
+  position: relative;
+  font-size: 1rem;
+  right: 25%;
+  top: -10%;
+  opacity: 70%;
+}
+.phone-case {
+  position: relative;
+  left: -20px;
+  width: 280px;
+  height: 550px;
+  background-color: var(--dark-color);
+  border-radius: 20px;
+  border: solid 4px var(--darker-color);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+.watch-container {
+  border-radius: 20px 20px 0 0;
+  height: 40%;
+  width: 100%;
+  animation: backgroundAnimate 6s linear infinite alternate;
+}
+.header {
+  text-align: center;
+}
+.clock {
+  /* text-align: center; */
+  width: 150px;
+  height: 150px;
+  background-color: var(--dark-color);
+  position: relative;
+  top: 50%;
+  left: 24%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: solid 5px transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: backgroundAnimate 6s linear infinite alternate;
+}
+.time {
+  width: 1px;
+  height: 13px;
+  background-color: var(--text-color);
+  display: block;
+  margin: auto;
+  /* position: relative; */
+}
+.time:nth-child(2),
+.time:nth-child(3) {
+  transform: rotate(90deg);
+  position: relative;
+}
+.hand3 {
+  right: -50px;
+  top: -10%;
+}
+.hand9 {
+  right: 50px;
+  top: 10%;
+}
+.seconds {
+  transition: all 0.5s ease;
+  width: 2px;
+  height: 70px;
+  position: absolute;
+  left: 49%;
+  bottom: 50%;
+}
+.fetch {
+  animation: fetch 2s linear infinite alternate;
+}
+@keyframes fetch {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+/* The part Rotating the seconds Hand */
+.second-warpper {
+  position: absolute;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+}
+.minutes {
+  background: red;
+  height: 60px;
+}
+.digital-time-container {
+  /* background-color: red; */
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.middle-point {
+  width: 10px;
+  height: 10px;
+  /* background-color: var(--dark-color); */
+  border-radius: 50%;
+  position: absolute;
+  bottom: 48%;
+  left: 48%;
+  z-index: 999;
+}
+/* Desktop Screen */
+@media screen and (min-width: 640px) {
+  .App {
+    flex-direction: row;
+  }
+  .theme-container {
+    border-radius: 0;
+    position: static;
+    height: 100%;
+    flex: 2;
+  }
+  .clock-container {
+    flex: 2;
+  }
+}
